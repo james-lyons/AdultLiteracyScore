@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { Alert } from 'react-alert'
 import './App.css';
 
 class App extends PureComponent {
