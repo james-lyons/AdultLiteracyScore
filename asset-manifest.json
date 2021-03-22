@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/AdultLiteracyScore/static/css/main.fedd4eac.chunk.css",
+    "main.js": "/AdultLiteracyScore/static/js/main.4da25c4a.chunk.js",
+    "main.js.map": "/AdultLiteracyScore/static/js/main.4da25c4a.chunk.js.map",
+    "runtime-main.js": "/AdultLiteracyScore/static/js/runtime-main.51e622f3.js",
+    "runtime-main.js.map": "/AdultLiteracyScore/static/js/runtime-main.51e622f3.js.map",
+    "static/js/2.d3bd959c.chunk.js": "/AdultLiteracyScore/static/js/2.d3bd959c.chunk.js",
+    "static/js/2.d3bd959c.chunk.js.map": "/AdultLiteracyScore/static/js/2.d3bd959c.chunk.js.map",
+    "index.html": "/AdultLiteracyScore/index.html",
+    "static/css/main.fedd4eac.chunk.css.map": "/AdultLiteracyScore/static/css/main.fedd4eac.chunk.css.map",
+    "static/js/2.d3bd959c.chunk.js.LICENSE.txt": "/AdultLiteracyScore/static/js/2.d3bd959c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.51e622f3.js",
+    "static/js/2.d3bd959c.chunk.js",
+    "static/css/main.fedd4eac.chunk.css",
+    "static/js/main.4da25c4a.chunk.js"
+  ]
+}
