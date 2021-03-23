@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Checkbox, List, Button, Modal, Image, Header } from 'semantic-ui-react'
+import { Checkbox, List, Button, Modal, Image } from 'semantic-ui-react'
 import './App.css';
 
 class App extends PureComponent {
@@ -214,7 +214,7 @@ class App extends PureComponent {
                   </Modal.Description>
                </Modal.Content>
             );
-         }
+         };
       };
 
       const calcScore = (questions) => {
@@ -227,10 +227,9 @@ class App extends PureComponent {
          };
 
          this.setState({ score })
-      }
+      };
 
       const calculateScore = async () => {
-         const { score } = this.state;
          const questions = this.state.questions;
          await calcScore(questions);
       };
