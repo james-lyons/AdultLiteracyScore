@@ -1,60 +1,64 @@
 import React, { PureComponent } from 'react';
-import { Checkbox, List, Button } from 'semantic-ui-react'
+import { Checkbox, List, Button, Modal, Image, Header } from 'semantic-ui-react'
 import './App.css';
 
 class App extends PureComponent {
 
    state = {
-      q01: false,
-      q02: false,
-      q03: false,
-      q04: false,
-      q05: false,
-      q06: false,
-      q07: false,
-      q08: false,
-      q09: false,
-      q10: false,
-      q11: false,
-      q12: false,
-      q13: false,
-      q14: false,
-      q15: false,
-      q16: false,
-      q17: false,
-      q18: false,
-      q19: false,
-      q20: false,
-      q21: false,
-      q22: false,
-      q23: false,
-      q24: false,
-      q25: false,
-      q26: false,
-      q27: false,
-      q28: false,
-      q29: false,
-      q30: false,
-      q31: false,
-      q32: false,
-      q33: false,
-      q34: false,
-      q35: false,
-      q36: false,
-      q37: false,
-      q38: false,
-      q39: false,
-      q40: false,
-      q41: false,
-      q42: false,
-      q43: false,
-      q44: false,
-      q45: false,
-      q46: false,
-      q47: false,
-      q48: false,
-      q49: false,
-      q50: false,
+      questions: {
+         q01: false,
+         q02: false,
+         q03: false,
+         q04: false,
+         q05: false,
+         q06: false,
+         q07: false,
+         q08: false,
+         q09: false,
+         q10: false,
+         q11: false,
+         q12: false,
+         q13: false,
+         q14: false,
+         q15: false,
+         q16: false,
+         q17: false,
+         q18: false,
+         q19: false,
+         q20: false,
+         q21: false,
+         q22: false,
+         q23: false,
+         q24: false,
+         q25: false,
+         q26: false,
+         q27: false,
+         q28: false,
+         q29: false,
+         q30: false,
+         q31: false,
+         q32: false,
+         q33: false,
+         q34: false,
+         q35: false,
+         q36: false,
+         q37: false,
+         q38: false,
+         q39: false,
+         q40: false,
+         q41: false,
+         q42: false,
+         q43: false,
+         q44: false,
+         q45: false,
+         q46: false,
+         q47: false,
+         q48: false,
+         q49: false,
+         q50: false
+      },
+      showModal: false,
+      score: 0,
    };
 
    render() {
@@ -113,18 +117,18 @@ class App extends PureComponent {
       ];
 
       const handleBoxCheck = (e, data) => {
-         const { name, value } = data;
-         console.log(e.target)
+         const { questions } = this.state;
+         const { name, checked } = data;
 
-         if(value==='true') {
+         if(checked===true) {
             return this.setState({
-               [name]: false
-            });
+               questions: { ...questions, [name]: true }
+            })
          } else {
             return this.setState({
-               [name]: true
+               questions: { ...questions, [name]: false }
             });
-         };
+         }
       };
 
       const getKey = (questionString) => {
@@ -152,8 +156,68 @@ class App extends PureComponent {
          return questionArray
       };
 
-      const calculateScore = () => {
-         const questions = this.state;
+      const scoreModal = () => {
+         const { score } = this.state;
+         const baby = `You are ${ score }% adult. You're still a baby. Go play with some blocks or somethin...`;
+         const child = `You are ${ score }% adult. You're becoming a big boy / girl, yay!!. Here, take a juicebox and go back to doing your homework.`;
+         const youngAdult = `You are ${ score }% adult. You're on your way to becoming a real adult! Fantastic. Bills! Taxes! Have fun! `;
+         const adult = `You are ${ score }% adult. You're almost a full-fledged adult! So much for you to still not do. It's all downhill from here`;
+         const grandPerson = `You are ${ score }% adult. Congratz!! All that's left for you to do is die.`;
+
+         if (score < 20) {
+            return (
+               <Modal.Content image>
+                  <Image size='medium' src='https://www.flaticon.com/svg/vstatic/svg/1702/1702292.svg?token=exp=1616474268~hmac=80c77b658f2f157fdef7bfc2482f087a' wrapped />
+                  <Modal.Description>
+                     <h1>Adult Literacy Score: { this.state.score } &#37;</h1>
+                     <h3>{ baby }</h3>
+                  </Modal.Description>
+               </Modal.Content>
+            );
+         } else if (score < 40) {
+            return (
+               <Modal.Content image>
+                  <Image size='medium' src='https://www.flaticon.com/svg/vstatic/svg/3886/3886660.svg?token=exp=1616474565~hmac=f269df771685055b92a7aa97892b3b72' wrapped />
+                  <Modal.Description>
+                     <h1>Adult Literacy Score: { this.state.score } &#37;</h1>
+                     <h3><h3>{ child }</h3></h3>
+                  </Modal.Description>
+               </Modal.Content>
+            );
+         } else if (score < 60) {
+            return (
+               <Modal.Content image>
+                  <Image size='medium' src='https://www.flaticon.com/svg/vstatic/svg/3750/3750019.svg?token=exp=1616474640~hmac=1524155a8241630aea9157b14fc3bde8' wrapped />
+                  <Modal.Description>
+                     <h1>Adult Literacy Score: { this.state.score } &#37;</h1>
+                     <h3><h3>{ youngAdult }</h3></h3>
+                  </Modal.Description>
+               </Modal.Content>
+            );
+         } else if (score < 80) {
+            return (
+               <Modal.Content image>
+                  <Image size='medium' src='https://www.flaticon.com/svg/vstatic/svg/949/949677.svg?token=exp=1616474699~hmac=7a58b9401df88b7174e9417d77d0cb6e' wrapped />
+                  <Modal.Description>
+                     <h1>Adult Literacy Score: { this.state.score } &#37;</h1>
+                     <h3><h3>{ adult }</h3></h3>
+                  </Modal.Description>
+               </Modal.Content>
+            );
+         } else {
+            return (
+               <Modal.Content image>
+                  <Image size='medium' src='https://www.flaticon.com/svg/vstatic/svg/375/375285.svg?token=exp=1616474729~hmac=b328aced4f5eb9915f4fab4e6775f122' wrapped />
+                  <Modal.Description>
+                     <h1>Adult Literacy Score: { this.state.score } &#37;</h1>
+                     <h3><h3>{ grandPerson }</h3></h3>
+                  </Modal.Description>
+               </Modal.Content>
+            );
+         }
+      };
+
+      const calcScore = (questions) => {
          let score = 0;
 
          for (let [key, value] of Object.entries(questions)) {
@@ -162,22 +226,21 @@ class App extends PureComponent {
             };
          };
 
-         if (score <= 20) {
-            alert(`You are ${ score }% adult. Here, take a juicebox and go back to doing your homework.`);
+         this.setState({ score })
+      }
 
-         } else if (score <= 40 ) {
-            alert(`You are ${ score }% adult. You're becoming a big boy / girl, yay!!.`);
-
-         } else if (score <= 60 ) {
-            alert(`You are ${ score }% adult. You're on your way to becoming a real adult! Fantastic.`);
-
-         } else if (score <= 80 ) {
-            alert(`You are ${ score }% adult. You're almost a full-fledged adult! So much for you to still not do.`);
-
-         } else {
-            alert(`You are ${ score }% adult. Congratz!! All that's left for you to do is Die.`);
-         };
+      const calculateScore = async () => {
+         const { score } = this.state;
+         const questions = this.state.questions;
+         await calcScore(questions);
       };
+
+      const handleModal = (modalSetting) => {
+         this.setState({ showModal: modalSetting });
+         calculateScore();
+      };
+
+      const { showModal } = this.state;
 
       return (
          <>
@@ -194,7 +257,16 @@ class App extends PureComponent {
                      </form>
 
                   <div id="button-container">
-                     <Button id="button" onClick={ () => calculateScore() } primary>Calculate Adult Literacy Score</Button>
+                     <Modal
+                        onOpen={ () => {
+                           handleModal(true);
+                        }}
+                        onClose={ () => handleModal(false) }
+                        showModal={ showModal }
+                        trigger={<Button id='button' primary>Calculate Adult Literacy Score</Button>}
+                     >
+                        {  this.state.showModal && scoreModal() }
+                     </Modal>
                   </div>
                </div>
             </div>
