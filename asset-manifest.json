@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/AdultLiteracyScore/static/css/main.b4e897bd.chunk.css",
-    "main.js": "/AdultLiteracyScore/static/js/main.8482c4cf.chunk.js",
-    "main.js.map": "/AdultLiteracyScore/static/js/main.8482c4cf.chunk.js.map",
+    "main.css": "/AdultLiteracyScore/static/css/main.0e391ce6.chunk.css",
+    "main.js": "/AdultLiteracyScore/static/js/main.a9b3c162.chunk.js",
+    "main.js.map": "/AdultLiteracyScore/static/js/main.a9b3c162.chunk.js.map",
     "runtime-main.js": "/AdultLiteracyScore/static/js/runtime-main.51e622f3.js",
     "runtime-main.js.map": "/AdultLiteracyScore/static/js/runtime-main.51e622f3.js.map",
     "static/css/2.3a974623.chunk.css": "/AdultLiteracyScore/static/css/2.3a974623.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.f9c5565a.chunk.js.map": "/AdultLiteracyScore/static/js/2.f9c5565a.chunk.js.map",
     "index.html": "/AdultLiteracyScore/index.html",
     "static/css/2.3a974623.chunk.css.map": "/AdultLiteracyScore/static/css/2.3a974623.chunk.css.map",
-    "static/css/main.b4e897bd.chunk.css.map": "/AdultLiteracyScore/static/css/main.b4e897bd.chunk.css.map",
+    "static/css/main.0e391ce6.chunk.css.map": "/AdultLiteracyScore/static/css/main.0e391ce6.chunk.css.map",
     "static/js/2.f9c5565a.chunk.js.LICENSE.txt": "/AdultLiteracyScore/static/js/2.f9c5565a.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/AdultLiteracyScore/static/media/outline-icons.ddae9b1b.woff"
   },
@@ -18,7 +18,7 @@
     "static/js/runtime-main.51e622f3.js",
     "static/css/2.3a974623.chunk.css",
     "static/js/2.f9c5565a.chunk.js",
-    "static/css/main.b4e897bd.chunk.css",
-    "static/js/main.8482c4cf.chunk.js"
+    "static/css/main.0e391ce6.chunk.css",
+    "static/js/main.a9b3c162.chunk.js"
   ]
 }
