@@ -1,8 +1,8 @@
 {
-  "name": "adult_literacy_2",
+  "name": "adult_literacy",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://james-lyons.github.io/AdultLiteracyScore/",
+  "homepage": "https://adultliteracytest.com",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
