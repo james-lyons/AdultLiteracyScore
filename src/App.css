@@ -9,7 +9,7 @@
 
 #header {
    font-size: 2.5em;
-   padding: 5rem 0 2rem !important;
+   padding: 5rem 6rem 2rem;
    text-align: center;
 }
 
@@ -31,4 +31,33 @@
 
 .checkbox-items {
    font-size: 1.25rem !important;
+}
+
+@media only screen and (max-width: 1200px) {
+   #sub-container {
+      margin: 0 6rem;
+   }
+}
+
+
+@media only screen and (max-width: 800px) {
+   #header {
+      font-size: 1.5em;
+      padding: 2rem 1rem 1rem;
+   }
+
+   #sub-container {
+      margin: 0 1rem;
+   }
+}
+
+@media only screen and (max-width: 500px) {
+   #header {
+      font-size: 1.5em;
+      padding: 2rem 1rem 1rem;
+   }
+
+   #sub-container {
+      margin: 0;
+   }
 }

@@ -1,6 +1,11 @@
 import React, { PureComponent } from 'react';
 import { Checkbox, List, Button, Modal, Image } from 'semantic-ui-react'
 import './App.css';
+import babyIcon from './files/babyIcon.svg'
+import kidsIcon from './files/kidsIcon.svg'
+import youngAdultIcon from './files/youngAdultIcon.svg'
+import adultTeacherIcon from './files/adultTeacherIcon.svg'
+import oldPersonsIcon from './files/oldPersonsIcon.svg'
 
 class App extends PureComponent {
 
@@ -141,7 +146,6 @@ class App extends PureComponent {
                <List.Item
                   className='list-items'
                   key={`q${ getKey(question) }`}
-                  onClick={ (e) => console.log(e) }
                >
                   <Checkbox
                      className='checkbox-items'
@@ -167,7 +171,7 @@ class App extends PureComponent {
          if (score < 20) {
             return (
                <Modal.Content image>
-                  <Image size='medium' src='https://www.flaticon.com/svg/vstatic/svg/1702/1702292.svg?token=exp=1616474268~hmac=80c77b658f2f157fdef7bfc2482f087a' wrapped />
+                  <Image size='medium' src={ babyIcon } wrapped />
                   <Modal.Description>
                      <h1>Adult Literacy Score: { this.state.score } &#37;</h1>
                      <h3>{ baby }</h3>
@@ -177,7 +181,7 @@ class App extends PureComponent {
          } else if (score < 40) {
             return (
                <Modal.Content image>
-                  <Image size='medium' src='https://www.flaticon.com/svg/vstatic/svg/3886/3886660.svg?token=exp=1616474565~hmac=f269df771685055b92a7aa97892b3b72' wrapped />
+                  <Image size='medium' src={ kidsIcon } wrapped />
                   <Modal.Description>
                      <h1>Adult Literacy Score: { this.state.score } &#37;</h1>
                      <h3><h3>{ child }</h3></h3>
@@ -187,7 +191,7 @@ class App extends PureComponent {
          } else if (score < 60) {
             return (
                <Modal.Content image>
-                  <Image size='medium' src='https://www.flaticon.com/svg/vstatic/svg/3750/3750019.svg?token=exp=1616474640~hmac=1524155a8241630aea9157b14fc3bde8' wrapped />
+                  <Image size='medium' src={ youngAdultIcon } wrapped />
                   <Modal.Description>
                      <h1>Adult Literacy Score: { this.state.score } &#37;</h1>
                      <h3><h3>{ youngAdult }</h3></h3>
@@ -197,7 +201,7 @@ class App extends PureComponent {
          } else if (score < 80) {
             return (
                <Modal.Content image>
-                  <Image size='medium' src='https://www.flaticon.com/svg/vstatic/svg/949/949677.svg?token=exp=1616474699~hmac=7a58b9401df88b7174e9417d77d0cb6e' wrapped />
+                  <Image size='medium' src={ adultTeacherIcon } wrapped />
                   <Modal.Description>
                      <h1>Adult Literacy Score: { this.state.score } &#37;</h1>
                      <h3><h3>{ adult }</h3></h3>
@@ -207,7 +211,7 @@ class App extends PureComponent {
          } else {
             return (
                <Modal.Content image>
-                  <Image size='medium' src='https://www.flaticon.com/svg/vstatic/svg/375/375285.svg?token=exp=1616474729~hmac=b328aced4f5eb9915f4fab4e6775f122' wrapped />
+                  <Image size='medium' src={ oldPersonsIcon } wrapped />
                   <Modal.Description>
                      <h1>Adult Literacy Score: { this.state.score } &#37;</h1>
                      <h3><h3>{ grandPerson }</h3></h3>
@@ -244,7 +248,7 @@ class App extends PureComponent {
       return (
          <>
             <div id='container'>
-               <h1 id="header" style={{ padding: '0 3rem' }}>
+               <h1 id="header">
                   Adult Literacy Test: How much of an adult are you? Find out now!
                </h1>
 
