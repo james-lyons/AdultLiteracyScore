@@ -100,7 +100,7 @@ class App extends PureComponent {
          '34. No longer completely socially dependent on an individual friend, family member, partner',
          '35. Gotten into a serious relationship',
          '36. Considered a long-term committed relationship (marriage / alternative partnership)',
-         '37. Developed a early sleep schedule (asleep before 12pm)',
+         '37. Developed a early sleep schedule (asleep before 12am)',
          '38. Declined invitations for a night out',
          '39. Tried learning different skills (i.e. musical instruments, how to cook, etc.)',
          '40. Paid for luxuries (i.e. expenses beyond basic necessities such as rent or mortgage, food, utilities, transportation; a vacation, an expensive personal project, etc.)',
