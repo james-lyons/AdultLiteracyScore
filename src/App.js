@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { Checkbox, List, Button } from 'semantic-ui-react'
 import './App.css';
 
 class App extends PureComponent {
@@ -109,10 +110,11 @@ class App extends PureComponent {
          '48. Had kids',
          '49. Learned how to raise kids (i.e. know how to change a diaper, remember doctors names and contact info, have school drop-off and playdate schedules)',
          '50. Wrote a will, prepared for the eventuality of death'
-      ]
+      ];
 
-      const handleBoxCheck = (e) => {
-         const { name, value } = e.target;
+      const handleBoxCheck = (e, data) => {
+         const { name, value } = data;
+         console.log(e.target)
 
          if(value==='true') {
             return this.setState({
@@ -132,18 +134,20 @@ class App extends PureComponent {
 
       const populateQuestions = (questions) => {
          const questionArray = questions.map((question) => 
-            <>
-               <label>
-                  { question }
-                  <input
+               <List.Item
+                  className='list-items'
+                  key={`q${ getKey(question) }`}
+                  onClick={ (e) => console.log(e) }
+               >
+                  <Checkbox
+                     className='checkbox-items'
+                     label={ question }
                      name={`q${ getKey(question) }`}
                      type='checkbox'
-                     value={ this.state.q1 }
-                     onClick={ (e) => handleBoxCheck(e) }
+                     defaultValue={ false }
+                     onClick={ (e, data) => handleBoxCheck(e, data) }
                   />
-               </label>
-               <br/>
-            </>
+               </List.Item>
          );
          return questionArray
       };
@@ -177,18 +181,22 @@ class App extends PureComponent {
 
       return (
          <>
-            <div style={{ padding: '3rem' }}>
-               <h1 style={{ padding: '0 3rem' }}>
+            <div id='container'>
+               <h1 id="header" style={{ padding: '0 3rem' }}>
                   Adult Literacy Test: How much of an adult are you? Find out now!
                </h1>
 
-               <form id="question-box">
-                  { populateQuestions(questions) }
-               </form>
-            </div>
+               <div id='sub-container'>
+                     <form id="question-box">
+                        <List as='ol'>
+                           { populateQuestions(questions) }
+                        </List>
+                     </form>
 
-            <div style={{ padding: '0 6rem 6rem 6rem' }}>
-               <button style={{ padding: '1rem' }} onClick={ () => calculateScore() }>Calculate Adult Literacy Score</button>
+                  <div id="button-container">
+                     <Button id="button" onClick={ () => calculateScore() } primary>Calculate Adult Literacy Score</Button>
+                  </div>
+               </div>
             </div>
          </>
       );
